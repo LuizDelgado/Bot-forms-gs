@@ -1,6 +1,6 @@
 function enviarDadosGrupoTelegram() {
-    var idGrupoTelegram = "-856054475"; // coloque aqui o ID do seu grupo Telegram
-    var planilha = SpreadsheetApp.openById("1NJ97b9dsYDDy59mQSkcrZ98-TYK_sPKfWsE0eORzJPg"); // coloque aqui o ID da planilha
+    var idGrupoTelegram = "GROUP_KEY"; // coloque aqui o ID do seu grupo Telegram
+    var planilha = SpreadsheetApp.openById("SPREADSHEET_KEY"); // coloque aqui o ID da planilha
     var aba = planilha.getActiveSheet();
     var ultimaLinha = aba.getLastRow();
     var time_now = Utilities.formatDate(new Date(), "CST", "hh:mm:ss a");
@@ -26,7 +26,7 @@ function enviarDadosGrupoTelegram() {
   
 
     // Envia a mensagem para o grupo Telegram
-    var telegramBotToken = "5802243472:AAENnUsrH4deZ4ZOk49tMKUEKAlA-bGhmN4"; // coloque aqui o token do seu bot Telegram
+    var telegramBotToken = "BOT_KEY"; // coloque aqui o token do seu bot Telegram
     var telegramUrl = "https://api.telegram.org/bot" + telegramBotToken + "/sendMessage?chat_id=" + idGrupoTelegram + "&text=" + encodeURIComponent(mensagem) + "&parse_mode=HTML";
   
     UrlFetchApp.fetch(telegramUrl);
